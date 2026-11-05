@@ -210,21 +210,43 @@
 
         </div>
 
+        <!-- Barra de Filtro de Clases Predefinidas (Prioridad: 1 Los míos, 2 De la relojería) -->
+        <div class="barra-filtro-clases">
+          <div class="etiqueta-filtro-clase">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <span>Clases:</span>
+          </div>
+          <div class="grupo-pastillas-clase" role="tablist">
+            <button class="boton-filtro-clase activo" data-filtro-clase="todas" onclick="filtrarPorClase('todas')">
+              Todas las clases
+            </button>
+            <button class="boton-filtro-clase" data-filtro-clase="losMios" onclick="filtrarPorClase('losMios')">
+              1- Los míos
+            </button>
+            <button class="boton-filtro-clase" data-filtro-clase="losDeLaRelojeria" onclick="filtrarPorClase('losDeLaRelojeria')">
+              2- Los de la relojería
+            </button>
+          </div>
+        </div>
       </div>
 
       <div class="cuadricula-productos" id="cuadricula-productos">
+        <!-- =================================================================
+             PRODUCTOS DEL RUBRO 1: RELOJES (RUBRO PRINCIPAL)
+             Disposición secuencial en HTML (reloj1 a reloj24)
+             (El ordenamiento dinámico por precio y clase se gestiona vía JS)
+             ================================================================= -->
 
-        <!-- ==========================================
-             PRODUCTOS DEL RUBRO 1: RELOJES (PRINCIPAL)
-             ========================================== -->
-
-        <article class="tarjeta-producto" data-categoria="relojes">
+        <article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="23000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj1.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -247,14 +269,15 @@
             </div>
           </div>
         </article>
-        
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="8000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj2.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -278,13 +301,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="8000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj3.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -308,13 +332,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="8000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj4.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -338,13 +363,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="6500">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj5.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -368,13 +394,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="8000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj6.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -398,13 +425,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="8000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj7.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -428,13 +456,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="12500">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj8.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -458,13 +487,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="7500">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj9.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -488,13 +518,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="8200">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj10.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -518,13 +549,14 @@
           </div>
         </article>
 
-        <article class="tarjeta-producto" data-categoria="relojes">
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="30000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj11.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -547,14 +579,15 @@
             </div>
           </div>
         </article>
-        
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="10000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj12.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -577,14 +610,15 @@
             </div>
           </div>
         </article>
-                
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="25000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj13.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -607,14 +641,15 @@
             </div>
           </div>
         </article>
-                        
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="26000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj14.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -637,14 +672,15 @@
             </div>
           </div>
         </article>
-                                
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="13600">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj15.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -667,14 +703,15 @@
             </div>
           </div>
         </article>
-                                        
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="16000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj16.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -697,14 +734,15 @@
             </div>
           </div>
         </article>
-                                            
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="27000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj17.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -727,14 +765,15 @@
             </div>
           </div>
         </article>
-                                                    
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="11500">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj18.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -757,14 +796,15 @@
             </div>
           </div>
         </article>
-                                                          
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="70000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj19.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -787,14 +827,15 @@
             </div>
           </div>
         </article>
-                                                                  
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="42000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj20.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -817,14 +858,15 @@
             </div>
           </div>
         </article>
-                                                                          
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="30000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj21.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -847,14 +889,15 @@
             </div>
           </div>
         </article>
-                                                                                  
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="136000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj22.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -877,14 +920,15 @@
             </div>
           </div>
         </article>
-                                                                                          
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="16000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj23.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -907,14 +951,15 @@
             </div>
           </div>
         </article>
-                                                                                                  
-        <article class="tarjeta-producto" data-categoria="relojes">
+
+<article class="tarjeta-producto losMios" data-categoria="relojes" data-clase="losMios" data-precio="52000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro1/reloj24.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -937,18 +982,21 @@
             </div>
           </div>
         </article>
-        
-        <!-- ==========================================
-             PRODUCTOS DEL RUBRO 2: ANTIGÜEDADES
-             ========================================== -->
 
-        <article class="tarjeta-producto" data-categoria="antiguedades">
+        <!-- =================================================================
+             PRODUCTOS DEL RUBRO 2: ANTIGÜEDADES (RUBRO SECUNDARIO)
+             Disposición secuencial en HTML (antiguedad1 a antiguedad7)
+             (El ordenamiento dinámico por precio y clase se gestiona vía JS)
+             ================================================================= -->
+
+<article class="tarjeta-producto losMios" data-categoria="antiguedades" data-clase="losMios" data-precio="4000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro2/antiguedad1.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -971,14 +1019,15 @@
             </div>
           </div>
         </article>
-        
-        <article class="tarjeta-producto" data-categoria="antiguedades">
+
+<article class="tarjeta-producto losMios" data-categoria="antiguedades" data-clase="losMios" data-precio="55000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro2/antiguedad2.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -1001,14 +1050,15 @@
             </div>
           </div>
         </article>
-                
-        <article class="tarjeta-producto" data-categoria="antiguedades">
+
+<article class="tarjeta-producto losMios" data-categoria="antiguedades" data-clase="losMios" data-precio="18000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro2/antiguedad3.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -1031,14 +1081,15 @@
             </div>
           </div>
         </article>
-                        
-        <article class="tarjeta-producto" data-categoria="antiguedades">
+
+<article class="tarjeta-producto losMios" data-categoria="antiguedades" data-clase="losMios" data-precio="6000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro2/antiguedad4.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -1061,14 +1112,15 @@
             </div>
           </div>
         </article>
-                              
-        <article class="tarjeta-producto" data-categoria="antiguedades">
+
+<article class="tarjeta-producto losMios" data-categoria="antiguedades" data-clase="losMios" data-precio="15000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro2/antiguedad5.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -1091,14 +1143,15 @@
             </div>
           </div>
         </article>
-                                      
-        <article class="tarjeta-producto" data-categoria="antiguedades">
+
+<article class="tarjeta-producto losMios" data-categoria="antiguedades" data-clase="losMios" data-precio="20000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro2/antiguedad6.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -1121,14 +1174,15 @@
             </div>
           </div>
         </article>
-                                              
-        <article class="tarjeta-producto" data-categoria="antiguedades">
+
+<article class="tarjeta-producto losMios" data-categoria="antiguedades" data-clase="losMios" data-precio="6000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro2/antiguedad7.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -1152,19 +1206,20 @@
           </div>
         </article>
 
-        <!-- ==========================================
-             PRODUCTOS DEL RUBRO 3: VENTAS VARIAS
-             ========================================== -->
+        <!-- =================================================================
+             PRODUCTOS DEL RUBRO 3: VENTAS VARIAS (RUBRO ÚLTIMO)
+             Disposición secuencial en HTML (otro1)
+             (El ordenamiento dinámico por precio y clase se gestiona vía JS)
+             ================================================================= -->
 
-        <!-- PRODUCTO 10: Set Coleccionista Cuero y Pluma -->
-
-        <article class="tarjeta-producto" data-categoria="otros">
+<article class="tarjeta-producto losMios" data-categoria="otros" data-clase="losMios" data-precio="3000">
           <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
             target="_blank" rel="noopener noreferrer" class="medio-tarjeta" title="Consultar por WhatsApp">
             <img src="recursos/Rubro3/otro1.jpeg" alt="Producto" class="imagen-tarjeta" loading="lazy">
           </a>
           <div class="cuerpo-tarjeta">
             <div class="linea-categoria-tarjeta">
+              <span class="insignia-clase-producto insignia-losMios">Los míos</span>
             </div>
             <h3 class="titulo-tarjeta">
               <a href="https://wa.me/59895613589?text=SitioWeb:%20Hola%20Relojes%20AV,%20quisiera%20consultar%20por%20una%20pieza"
@@ -1187,7 +1242,6 @@
             </div>
           </div>
         </article>
-
 
       </div>
     </div>
@@ -1464,14 +1518,14 @@
             </li>
             <li><a href="https://www.instagram.com/relojes_av" target="_blank" rel="noopener noreferrer">Instagram:
                 @relojes_av</a></li>
-            <li><span>Uruguay • Envíos Nacionales</span></li>
+            <li><span>Uruguay â€¢ Envíos Nacionales</span></li>
           </ul>
         </div>
 
       </div>
 
       <div class="fondo-pie-pagina">
-        <div>© 2026 <strong>Relojes AV</strong>. Todos los derechos reservados.</div>
+        <div>Â© 2026 <strong>Relojes AV</strong>. Todos los derechos reservados.</div>
         <div style="color:var(--texto-atenuado);">Alta relojería, piezas de época y objetos coleccionables.</div>
       </div>
     </div>
@@ -1494,81 +1548,7 @@
        SCRIPTS
        ========================================================================= -->
 
-  <script>
-    // Cambiar entre categorías: 'relojes' (principal), 'antiguedades' (secundario), 'otros' (último)
-    function cambiarCategoria(categoria) {
-      // 1. Actualizar el estado visual de los botones de pestañas
-      var botones = document.querySelectorAll('.boton-pestana-categoria');
-      botones.forEach(function (btn) {
-        var esActivo = btn.id === ('pestana-' + categoria);
-        btn.classList.toggle('activo', esActivo);
-        btn.setAttribute('aria-selected', esActivo ? 'true' : 'false');
-      });
-
-      // 2. Mostrar sólo los productos que corresponden a la categoría seleccionada
-      var tarjetas = document.querySelectorAll('.tarjeta-producto');
-      tarjetas.forEach(function (tarjeta) {
-        if (tarjeta.getAttribute('data-categoria') === categoria) {
-          tarjeta.style.display = '';
-        } else {
-          tarjeta.style.display = 'none';
-        }
-      });
-    }
-
-    // Navegar y hacer scroll suave al catálogo
-    function irACategoria(categoria) {
-      cambiarCategoria(categoria);
-      var catalogo = document.getElementById('catalogo');
-      if (catalogo) {
-        catalogo.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    // Menú móvil (abrir y cerrar)
-    var alternadorMovil = document.getElementById('alternador-movil');
-    var navPrincipal = document.getElementById('navegacion-principal');
-    if (alternadorMovil && navPrincipal) {
-      alternadorMovil.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var estaAbierto = navPrincipal.classList.toggle('activo');
-        navPrincipal.classList.toggle('movil-abierto', estaAbierto);
-        alternadorMovil.classList.toggle('activo', estaAbierto);
-      });
-
-      navPrincipal.querySelectorAll('a').forEach(function (enlace) {
-        enlace.addEventListener('click', function () {
-          navPrincipal.classList.remove('activo');
-          navPrincipal.classList.remove('movil-abierto');
-          alternadorMovil.classList.remove('activo');
-        });
-      });
-
-      document.addEventListener('click', function (e) {
-        if (!navPrincipal.contains(e.target) && !alternadorMovil.contains(e.target)) {
-          navPrincipal.classList.remove('activo');
-          navPrincipal.classList.remove('movil-abierto');
-          alternadorMovil.classList.remove('activo');
-        }
-      });
-    }
-
-    // Envío del formulario de consulta directo a WhatsApp
-    var formularioConsulta = document.getElementById('formulario-consulta');
-    if (formularioConsulta) {
-      formularioConsulta.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var nombre = document.getElementById('consulta-nombre').value;
-        var interes = document.getElementById('consulta-interes').value;
-        var mensaje = document.getElementById('consulta-mensaje').value;
-        var texto = encodeURIComponent('Hola Relojes AV, mi nombre es ' + nombre + '. Consulta sobre ' + interes + ': ' + mensaje);
-        window.open('https://wa.me/59895613589?text=' + texto, '_blank');
-      });
-    }
-
-    // Inicializar la página mostrando el rubro principal (relojes)
-    cambiarCategoria('relojes');
-  </script>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

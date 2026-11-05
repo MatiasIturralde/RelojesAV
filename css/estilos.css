@@ -833,6 +833,88 @@ img {
   font-weight: 700;
 }
 
+/* Insignias de Clases Predefinidas de Productos */
+.insignia-clase-producto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radio-circular);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.insignia-clase-producto.insignia-losMios {
+  background: rgba(184, 138, 27, 0.12);
+  color: var(--dorado-oscuro);
+  border: 1px solid rgba(184, 138, 27, 0.35);
+}
+
+.insignia-clase-producto.insignia-losDeLaRelojeria {
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+/* Barra de Filtro de Clases Predefinidas */
+.barra-filtro-clases {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--borde-suave);
+}
+
+.etiqueta-filtro-clase {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.grupo-pastillas-clase {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.boton-filtro-clase {
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radio-circular);
+  background: #ffffff;
+  border: 1px solid var(--borde-suave);
+  color: var(--texto-secundario);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transicion-rapida);
+  font-family: inherit;
+}
+
+.boton-filtro-clase:hover {
+  color: var(--dorado-oscuro);
+  border-color: var(--borde-dorado);
+  background: var(--dorado-claro);
+}
+
+.boton-filtro-clase.activo {
+  background: var(--dorado-oscuro);
+  color: #ffffff;
+  border-color: var(--dorado-oscuro);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(122, 88, 8, 0.25);
+}
+
 .titulo-tarjeta {
   font-size: 1.15rem;
   font-weight: 700;
