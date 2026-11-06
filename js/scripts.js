@@ -1,11 +1,3 @@
-/**
- * =============================================================================
- * RELOJES AV - ARCHIVO DE SCRIPTS Y LÓGICA PRINCIPAL
- * Sitio Oficial: Relojes AV (@relojes_av)
- * Manejo de Catálogo, Clases Predefinidas, Filtros y Ordenamiento por Prioridad
- * =============================================================================
- */
-
 // =============================================================================
 // 1. CONFIGURACIÓN DE CLASES PREDEFINIDAS Y PRIORIDAD
 //    Prioridad 1: Los míos (losMios)
@@ -42,30 +34,41 @@ function obtenerPrioridadClase(tarjeta) {
 
 /**
  * Obtiene el precio numérico del producto a partir del atributo data-precio
- * o del texto visible dentro de .valor-precio.
+ * o del texto visible dentro de .valor-precio, sincronizándolo dinámicamente si falta.
  *
  * @param {HTMLElement} tarjeta - Elemento del producto
  * @returns {number} Precio numérico limpio
  */
 function obtenerPrecio(tarjeta) {
   var precioAttr = tarjeta.getAttribute('data-precio');
-  if (precioAttr !== null && precioAttr !== '') {
-    var num = parseFloat(precioAttr);
-    if (!isNaN(num)) return num;
+  if (precioAttr !== null && precioAttr !== '' && !isNaN(parseFloat(precioAttr))) {
+    return parseFloat(precioAttr);
   }
+
   var elemPrecio = tarjeta.querySelector('.valor-precio');
   if (elemPrecio) {
-    var soloDigitos = elemPrecio.textContent.replace(/[^0-9]/g, '');
-    var num2 = parseFloat(soloDigitos);
-    if (!isNaN(num2)) return num2;
+    var texto = elemPrecio.textContent.trim();
+    if (/consultar/i.test(texto)) {
+      tarjeta.setAttribute('data-precio', '0');
+      return 0;
+    }
+    var coincidencia = texto.match(/(?:U\$S|\$)?\s*([\d.]+)/);
+    if (coincidencia && coincidencia[1]) {
+      var valorLimpio = parseInt(coincidencia[1].replace(/\./g, ''), 10) || 0;
+      tarjeta.setAttribute('data-precio', valorLimpio.toString());
+      return valorLimpio;
+    }
   }
   return 0;
 }
 
 /**
  * Ordena físicamente las tarjetas en el contenedor del DOM según:
- * 1. Prioridad de clase predefinida (1 Los míos, 2 Relojería)
- * 2. De mayor a menor precio (descendente)
+ * - Para rubro 'relojes':
+ *     1. Prioridad de clase predefinida (1 Los míos, 2 Relojería)
+ *     2. De mayor a menor precio dentro de cada clase
+ * - Para otros rubros ('antiguedades', 'otros'):
+ *     De mayor a menor precio directamente
  */
 function ordenarProductosEnDOM() {
   var contenedor = document.getElementById('cuadricula-productos');
@@ -74,15 +77,20 @@ function ordenarProductosEnDOM() {
   var tarjetas = Array.prototype.slice.call(contenedor.querySelectorAll('.tarjeta-producto'));
 
   tarjetas.sort(function (a, b) {
-    var prioA = obtenerPrioridadClase(a);
-    var prioB = obtenerPrioridadClase(b);
+    var catA = a.getAttribute('data-categoria');
+    var catB = b.getAttribute('data-categoria');
 
-    // Nivel 1: Prioridad de clase
-    if (prioA !== prioB) {
-      return prioA - prioB;
+    // Si ambos son relojes, aplicar jerarquía por clases y luego precio
+    if (catA === 'relojes' && catB === 'relojes') {
+      var prioA = obtenerPrioridadClase(a);
+      var prioB = obtenerPrioridadClase(b);
+
+      if (prioA !== prioB) {
+        return prioA - prioB;
+      }
     }
 
-    // Nivel 2: Dentro de la misma clase, de mayor a menor precio
+    // Por precio de mayor a menor
     var precioA = obtenerPrecio(a);
     var precioB = obtenerPrecio(b);
     return precioB - precioA;
@@ -95,23 +103,38 @@ function ordenarProductosEnDOM() {
 }
 
 /**
- * Aplica el ordenamiento por prioridad y precio, y filtra la visibilidad
- * de las tarjetas según la categoría y clase actualmente seleccionadas.
+ * Aplica el ordenamiento y filtra la visibilidad de las tarjetas.
+ * El filtro de clases (1- Los míos, 2- Los de la relojería) SOLO se aplica al rubro 'relojes'.
+ * En los demás rubros ('antiguedades', 'otros'), se muestran todos sus productos sin restricción de clase.
  */
 function aplicarFiltrosYOrden() {
-  // 1. Reordenar productos por clase y precio
+  // 1. Mostrar/Ocultar la barra de botones de clases según la categoría actual
+  var barraClases = document.getElementById('barra-filtro-clases');
+  if (barraClases) {
+    if (categoriaActual === 'relojes') {
+      barraClases.style.display = '';
+    } else {
+      barraClases.style.display = 'none';
+    }
+  }
+
+  // 2. Reordenar productos
   ordenarProductosEnDOM();
 
-  // 2. Filtrar visibilidad según categoría y clase
+  // 3. Filtrar visibilidad según categoría y clase
   var tarjetas = document.querySelectorAll('.tarjeta-producto');
   tarjetas.forEach(function (tarjeta) {
     var catTarjeta = tarjeta.getAttribute('data-categoria');
-    var claseTarjeta = tarjeta.getAttribute('data-clase') || '';
-
     var coincideCategoria = (catTarjeta === categoriaActual);
-    var coincideClase = (filtroClaseActual === 'todas') ||
-                        (claseTarjeta === filtroClaseActual) ||
-                        tarjeta.classList.contains(filtroClaseActual);
+
+    // El filtro de clase solo aplica si estamos en el rubro 'relojes'
+    var coincideClase = true;
+    if (categoriaActual === 'relojes') {
+      var claseTarjeta = tarjeta.getAttribute('data-clase') || '';
+      coincideClase = (filtroClaseActual === 'todas') ||
+                      (claseTarjeta === filtroClaseActual) ||
+                      tarjeta.classList.contains(filtroClaseActual);
+    }
 
     if (coincideCategoria && coincideClase) {
       tarjeta.style.display = '';
